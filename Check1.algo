@@ -1,0 +1,29 @@
+ALGORITHM Counter
+VAR
+    caracter : CHAR := '';
+    countC, countV : INTEGER := 0;
+    countW : INTEGER := 1;
+BEGIN
+    
+    REPEAT
+        Write("Give a caracter");
+        Read(caracter);
+
+        countC := countC + 1;
+
+        IF (caracter = ' ') THEN
+            countW := countW + 1;
+        END_IF
+
+        IF ( caracter = 'a' OR caracter = 'e' OR caracter = 'i' OR caracter = 'o' 
+            OR caracter = 'u' OR caracter = 'y' OR caracter = 'A' OR caracter = 'E' 
+            OR caracter = 'I' OR caracter = 'O' OR caracter = 'U' OR caracter = 'Y') THEN
+            countV := countV + 1;
+        END_IF
+    UNTIL (caracter = '.')
+    
+    Write("Nbr Caracter", countC);
+    Write("Nbr Word", countW);
+    Write("Nbr Voy", countV);
+
+END
